@@ -1,23 +1,20 @@
 import java.util.Scanner;
 
 public class Main {
-    public static boolean isPrime(int number) {
-        if (number < 2) return false;
+    static int fib(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        if (n == 0) {
+            return 0;
+        }
+        return fib(n-1) + fib(n-2);
+    }
 
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0) return false;
-        }
-        return true;
-    }
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Check the numbers from 1 to: ");
-        int number = input.nextInt();
-        System.out.println("Prime numbers: ");
-        for (int i = 1; i <= number; i++) {
-            if (isPrime(i)) System.out.println(i + " ");
+        System.out.println(fib(1));
+
         }
-    }
 
 
 }
