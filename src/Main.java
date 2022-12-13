@@ -1,21 +1,25 @@
-import java.util.Scanner;
-
 public class Main {
-    static int fib(int n) {
-        if (n == 1 || n == 2) {
-            return 1;
-        }
-        if (n == 0) {
-            return 0;
-        }
-        return fib(n-1) + fib(n-2);
-    }
-
     public static void main(String[] args) {
-        System.out.println(fib(1));
+        Teacher t1 = new Teacher("Mahmut hoca", "505","TRH" );
+        Teacher t2 = new Teacher("Volkan hoca", "555","EEE");
+        Teacher t3 = new Teacher("Şeyman hoca","534","BIO");
 
-        }
 
 
+        Course phyQuiz = new Course("Tarih", "101","TRH");
+        phyQuiz.addTeacher(t1);
+
+        Course phyExam = new Course("elekt","102", "EEE");
+        phyExam.addTeacher(t2);
+
+
+
+        Student s1 = new Student("Batu", "400", "12-F",phyQuiz,phyExam);
+        s1.addBulkExamNote(60,90);
+        s1.isPass();
+        s1.printNote();
+
+
+
+    }
 }
-
